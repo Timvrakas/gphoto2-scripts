@@ -1,0 +1,30 @@
+INFO:
+This package contains a group of programs developed for Stereoscopic Photography applications.
+They were developed for NASA and USGS, for calibration and testing of equiptment for use in surveys
+of Mars.
+
+The test setup is as folows:
+2x Cannon D60 EOS DSLR Cameras
+2x Lenses (WHAT KIND?)
+Mounting Bar, with horizontal offset of 25.4CM (from center of mounting holes)
+2x Alignment Jig, to achive tow-in angle of 2.5 degrees total
+Custom Sensor Platform, to measure GPS, Orientation.
+
+CAMERA CONFIG:
+The cameras must have the folowing options set for proper function.
+-NO flash (must be not be open)
+-Program Mode (Or Manual)
+-IS off (on lens)
+-RAW image format
+
+
+FUNCTIONS:
+
+./capture.sh:
+    Captures images from all attached cameras, saves to indexed folder
+
+./delete-all.sh:
+    Removes all files from data card
+
+./poll-status.sh:
+    Takes a test-shot and displays header data results
