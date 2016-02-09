@@ -22,9 +22,43 @@ FUNCTIONS:
 
 ./capture.sh:
     Captures images from all attached cameras, saves to indexed folder
+    [meant to be replaced by cameras_capgture_image.sh]
 
 ./delete-all.sh:
     Removes all files from data card
 
 ./poll-status.sh:
     Takes a test-shot and displays header data results
+
+cameras_set_names.sh:
+    Loops through attached cameras and checks the value of the ownername
+    configuration attribute.  Allows user to change the value if desired.
+    Script is designed to allow user to set LEFT and RIGHT camera names.
+    
+cameras_set_focallength.sh:
+    Loops through attached cameras and checks the value fo the camera focal
+    length.  The iteration allows the user to change the camera focal lengths
+    (manually) until the desired valiues are obtained.
+
+cameras_capture_image.sh:
+    Captures images from all attached cameras.  Assumes that the camera names
+    (ownername) have been set (e.g., using cameras_set_names.sh) since this
+    is used a root to the filename.  Output file(s) format: RAW CRW. (though
+    this is NOT explicitly set in this version of the script...it is assumed)
+    Image pairs are give a unique timestamp and are saved in the directory 
+    in which the command is executed (script can be anywhere in the path).
+
+cameras_change_jpg.py and cameras_change_raw.py:
+    Changes the image formats to either small JPG or RAW.  Uses imageformat
+    attribute (text) values for a Canon D60 camera.  These are called by
+    several camera scripts in this directory.  
+
+cameras_list.py: 
+    Displays all attached (and active) cameras and their ports.
+
+cameras_list_ports.py:
+    Lists all attached (and active) camera serial ports in a single, space-
+    delimited line (e.g., for easy use in shell script loops)
+
+getIMUvalues.py:
+    List all IMU board telemetry paremters in a single, space-delimiated line.
